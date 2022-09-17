@@ -1,17 +1,17 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
 const getUser = (userID) =>
-  fetch(`https://jsonplaceholder.typicode.com/users/${userID}`)
-    .then((response) => {
+  fetch(`https://jsonplaceholder.typicode.com/users/${userID}`).then(
+    (response) => {
       if (!response.ok) {
         throw new Error(`${response.status} Error`);
       } else {
         return response.json();
       }
-    },
+    }
   );
 
-console.log('--- Start ---');
+console.log("--- Start ---");
 
 getUser(2)
   .then((user) => {
@@ -21,5 +21,5 @@ getUser(2)
     console.error(error);
   })
   .finally(() => {
-    console.log('--- Completed ---');
+    console.log("--- Completed ---");
   });

@@ -1,8 +1,8 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
 const getUser = async (userID) => {
   const response = await fetch(
-    `https://jsonplaceholder.typicode.com/users/${userID}`,
+    `https://jsonplaceholder.typicode.com/users/${userID}`
   );
 
   if (!response.ok) {
@@ -12,7 +12,7 @@ const getUser = async (userID) => {
   return response.json();
 };
 
-console.log('--- Start ---');
+console.log("--- Start ---");
 
 const main = async () => {
   try {
@@ -21,7 +21,7 @@ const main = async () => {
   } catch (error) {
     console.error(error);
   } finally {
-    console.log('--- Completed ---');
+    console.log("--- Completed ---");
   }
 };
 
