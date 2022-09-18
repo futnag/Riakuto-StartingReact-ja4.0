@@ -1,11 +1,13 @@
 {
   type Unit = "USD" | "EUR" | "JPY" | "GBP";
 
+  // Unit; amount: number;
   type TCurrency = {
     unit: Unit;
     amount: number;
   };
 
+  // interface ICurrency
   interface ICurrency {
     unit: Unit;
     amount: number;
