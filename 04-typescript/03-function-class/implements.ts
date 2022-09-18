@@ -11,7 +11,7 @@ interface Quadrangle {
 }
 
 class Rectangle implements Shape, Quadrangle {
-  readonly name = 'rectangle';
+  readonly name = "rectangle";
   sideA: number;
   sideB: number;
 

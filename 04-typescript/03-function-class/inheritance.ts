@@ -1,25 +1,28 @@
-class Rectangle {
-  name = 'rectangle';
-  sideA: number;
-  sideB: number;
+{
+  class Rectangle {
+    name = "rectangle";
+    sideA: number;
+    sideB: number;
 
-  constructor(sideA: number, sideB: number) {
-    this.sideA = sideA;
-    this.sideB = sideB;
+    constructor(sideA: number, sideB: number) {
+      this.sideA = sideA;
+      this.sideB = sideB;
+    }
+
+    getArea = () => this.sideA * this.sideB;
   }
 
-  getArea = () => this.sideA * this.sideB;
-}
+  class Square extends Rectangle {
+    readonly name = "square";
+    side: number;
 
-class Square extends Rectangle {
-  readonly name = 'square';
-  side: number;
-
-  constructor(side: number) {
-    super(side, side);
-    this.name = 'square';
+    constructor(side: number) {
+      super(side, side);
+      this.name = "square";
+    }
   }
-}
 
-const sq = new Square(5);
-console.log(sq.getArea());
+  const sq = new Square(5);
+  console.log(sq.getArea());
+  console.log(sq.sideA); // 不要なプロパティも継承してしまう
+}
