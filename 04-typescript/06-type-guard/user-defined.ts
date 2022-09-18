@@ -6,6 +6,7 @@ interface User {
   };
 }
 
+// arg is User -> 型述語（Type Predicate） true であれば、arg は User であるとコンパイラが判断する
 const isUser = (arg: unknown): arg is User => {
   const u = arg as User;
 
