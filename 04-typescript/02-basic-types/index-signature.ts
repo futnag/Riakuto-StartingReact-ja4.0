@@ -1,4 +1,5 @@
 interface Status {
+  // インデックスシグネチャ
   [parameter: string]: number;
 }
 
@@ -9,7 +10,8 @@ const myStatus: Status = {
   maxMP: 174,
   attack: 39,
   defense: 25,
-  job: 'mage',
+  // job: 'mage',
+  job: 213,
 };
 
 console.log(myStatus);
