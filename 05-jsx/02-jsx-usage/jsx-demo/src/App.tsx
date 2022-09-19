@@ -7,7 +7,7 @@ import './App.css';
 const App: React.FC = () => (
   <div className="App">
     <Greet name="Patty" times={4} />
-    <Summary title="Maple Town">
+    <Summary title="Maple Town" folded>
       <p>
         Patty Hope-rabbit, along with her family, arrives in Maple Town, a
         smalltown inhabited by friendly animals.
