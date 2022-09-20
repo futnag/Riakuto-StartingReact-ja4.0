@@ -12,6 +12,11 @@ import {
 const Counter: FC = () => {
   const [count, setCount] = useState(0);
   const increment = () => setCount((c) => c + 1);
+  // 更新関数を渡さないと、意図した挙動にならない
+  // レンダリングにあたってコンポーネント関数が実行される際、
+  // その実行が終わるまで state の値は一定で変わらないため
+  const plusThree = () =>
+    [...Array(3).keys()].forEach(() => setCount((c) => c + 1));
   const reset = () => setCount(0);
 
   return (
@@ -23,6 +28,9 @@ const Counter: FC = () => {
       <ButtonGroup maxW="xs" m={2} variant="contained" isAttached>
         <Button w="xs" colorScheme="green" variant="solid" onClick={increment}>
           +1
+        </Button>
+        <Button w="xs" colorScheme="green" variant="solid" onClick={plusThree}>
+          +3
         </Button>
         <Button w="xs" colorScheme="red" variant="solid" onClick={reset}>
           Reset
